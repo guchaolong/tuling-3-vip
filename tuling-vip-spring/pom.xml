@@ -16,8 +16,9 @@
         <module>springannopriciple06logging</module>
         <module>springannopriciple06logging</module>
 
+
         <module>angle-spring-aop</module>
-        <module>angle-spring-transaction</module>
+<!--        <module>angle-spring-transaction</module>-->
         <module>tulingvip-springwebflux</module>
     </modules>
     <packaging>pom</packaging>
