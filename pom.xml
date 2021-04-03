@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.zeki</groupId>
+    <artifactId>tuling</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>tuling</name>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <modules>
+        <module>tuling-3-netty</module>
+
+        <module>tuling-03-rabbitmq</module>
+        <module>tuling-3-kafka/kafkaDemo</module>
+
+        <module>tuling-3-kafka/spring-boot-kafka</module>
+
+        <module>tuling-3-redis/redis-boot-sentinel-cluster</module>
+        <module>tuling-3-redis/redis-jedis</module>
+        <module>tuling-3-redis/redis-lock</module>
+
+        <module>tuling-3-shardingsphere</module>
+        <module>tuling-3-shardingsphere/tl-shardingjdbc-quickstart</module>
+
+        <module>tuling-3-springcloud-alibaba-demo/credit-service</module>
+        <module>tuling-3-springcloud-alibaba-demo/order-service</module>
+        <module>tuling-3-springcloud-alibaba-demo/stock-service</module>
+
+        <module>tuling-dubbo</module>
+
+        <module>tuling-03-rabbitmq/mq-reliabledelivery-deleycheck-order</module>
+        <module>tuling-03-rabbitmq/mq-reliabledelivery-dtt-order</module>
+        <module>tuling-03-rabbitmq/tuling-reliabledelivery-deleycheck-callback</module>
+        <module>tuling-03-rabbitmq/tuling-reliabledelivery-deleycheck-product</module>
+        <module>tuling-03-rabbitmq/tuling-reliabledelivery-dtt-product</module>
+        <module>tuling-03-rabbitmq/tulingvip-rabbitmq-advancedfeatures</module>
+        <module>tuling-03-rabbitmq/tulingvip-rabbitmq-quickstart</module>
+        <module>tuling-03-rabbitmq/tulingvip-rabbitmq-springwithrabbitmq</module>
+        <module>tuling-03-rabbitmq/tulingvip-springboot-rabbitmq-consumer</module>
+        <module>tuling-03-rabbitmq/tulingvip-springboot-rabbitmq-producer</module>
+
+        <module>tuling-juc-3</module>
+
+
+        <module>tuling-luban-netty</module>
+
+        <module>tuling-mybatis/mybatis01</module>
+        <module>tuling-mybatis/mybatis02</module>
+        <module>tuling-mybatis/mybatis03</module>
+        <module>tuling-mybatis/mybatis04</module>
+
+        <module>tuling-spring</module>
+
+        <module>tuling-vip-spring</module>
+
+
+        <module></module>
+
+    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
