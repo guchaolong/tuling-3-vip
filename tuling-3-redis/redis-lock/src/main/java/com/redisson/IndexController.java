@@ -3,11 +3,14 @@ package com.redisson;
 import org.redisson.Redisson;
 import org.redisson.RedissonRedLock;
 import org.redisson.api.RLock;
+import org.redisson.api.RReadWriteLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.TimeUnit;
@@ -46,7 +49,7 @@ public class IndexController {
             } else {
                 System.out.println("扣减失败，库存不足");
             }
-        }finally {
+        } finally {
             redissonLock.unlock();
             /*if (clientId.equals(stringRedisTemplate.opsForValue().get(lockKey))){
                     stringRedisTemplate.delete(lockKey);
@@ -87,5 +90,57 @@ public class IndexController {
 
         return "end";
     }
+
+
+    /**
+     * 读写锁， 解决双写一致性
+     *
+     * @param clientId
+     * @return
+     */
+
+    //查库存
+    @RequestMapping("/get_stock")
+    public String getStock(@RequestParam("clientId") Long clientId) throws Exception {
+        String lockKey = "product_stock_101";
+
+        //获取读写锁
+        RReadWriteLock readWriteLock = redisson.getReadWriteLock(lockKey);
+        //获取读锁, 并且这把锁的模式标记为read   mode = read
+        RLock rLock = readWriteLock.readLock();
+
+        rLock.lock();//判断一下是否有这把锁，有的话再判断一下模式是否read,是的话直接往下走，读读之间兼容
+        System.out.println("获取读锁成功： clientId=" + clientId);
+
+        String stock = stringRedisTemplate.opsForValue().get("stock");
+        if (StringUtils.isEmpty(stock)) {
+            System.out.println("查询数据库库存为10...");
+            Thread.sleep(5000);
+            stringRedisTemplate.opsForValue().set("stock", "10");
+        }
+        rLock.unlock();
+        System.out.println("释放读锁成功：client= " + clientId);
+        return "end";
+    }
+
+
+    @RequestMapping("/update_stock")
+    public String updateStock(@RequestParam("clientId") Long clientId) throws Exception {
+        String lockKey = "product_stock_101";
+
+        RReadWriteLock readWriteLock = redisson.getReadWriteLock(lockKey);
+        RLock writeLock = readWriteLock.writeLock();
+
+        writeLock.lock();//没有锁的情况下才能获取成功
+        System.out.println("获取写锁成功，clientId=" + clientId);
+        System.out.println("修改商品101的数据库为5...");
+        stringRedisTemplate.delete("stock");
+        Thread.sleep(5000);
+        writeLock.unlock();
+        System.out.println("释放写锁成功： clientId = " + clientId);
+
+        return "end";
+    }
+
 
 }

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.6.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.tuling</groupId>
+	<artifactId>tulingvip-cloud</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>tulingvip-cloud</name>
+	<packaging>pom</packaging>
+	<description>springcloud</description>
+
+
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<modules>
+		<module>tuling-ms-provider-order-swagger2-8002</module>
+		<module>tuling-ms-zuul-swagger2</module>
+		<module>tulingvip01-ms-consumer-user-8001</module>
+		<module>tulingvip01-ms-eureka-server</module>
+		<module>tulingvip01-ms-eureka-server-9001</module>
+		<module>tulingvip01-ms-eureka-server-study</module>
+		<module>tulingvip01-ms-provider-order-8002</module>
+		<module>tulingvip01-ms-provider-order-8003</module>
+		<module>tulingvip01-rest-consumer-user</module>
+		<module>tulingvip01-rest-provider-order</module>
+		<module>tulingvip01-rest-provider-order-8002</module>
+
+		<module>tulingvip02-ms-consumer-feign-8000</module>
+		<module>tulingvip02-ms-consumer-ribbon-8001</module>
+		<module>tulingvip02-ms-consumer-ribbon-8001-study</module>
+		<module>tulingvip02-ms-eureka-server-9000</module>
+		<module>tulingvip02-ms-eureka-server-9001</module>
+		<module>tulingvip02-ms-feign-api</module>
+		<module>tulingvip02-ms-provider-order-8002</module>
+		<module>tulingvip02-ms-provider-order-8003</module>
+		<module>tulingvip02-ms-provider-order-8004</module>
+		<module>tulingvip02-ms-provider-order-feign-8005</module>
+		<module>tulingvip02-ms-provider-order-feign-8006</module>
+		<module>tulingvip02-ms-provider-order-feign-8007</module>
+		<module>tulingvip02-ms-provider-order-feign-8008</module>
+
+		<module>tulingvip03-ms-consumer-feign-with-hystrix-8001</module>
+		<module>tulingvip03-ms-consumer-feign-without-hystrix-8001</module>
+		<module>tulingvip03-ms-consumer-hystrix-command</module>
+		<module>tulingvip03-ms-consumer-hystrix-thread-isolation</module>
+		<module>tulingvip03-ms-consumer-ribbon-hystrix--8003</module>
+		<module>tulingvip03-ms-consumer-ribbon-hystrix-timeout-retry-8001</module>
+		<module>tulingvip03-ms-dashboard</module>
+		<module>tulingvip03-ms-eureka-server-9000</module>
+		<module>tulingvip03-ms-provider-order-8002</module>
+		<module>tulingvip03-rest-consumer-user-8001-timeout</module>
+		<module>tulingvip03-rest-provider-order-8002-timeout</module>
+
+		<module>tulingvip04-ms-eureka-server-9000</module>
+		<module>tulingvip04-ms-gateway-zuul</module>
+		<module>tulingvip04-ms-gateway-zuul-cors</module>
+		<module>tulingvip04-ms-gateway-zuul-custom-exception</module>
+		<module>tulingvip04-ms-gateway-zuul-customfilter</module>
+		<module>tulingvip04-ms-gateway-zuul-fallback</module>
+		<module>tulingvip04-ms-hystrix-8005-study</module>
+		<module>tulingvip04-ms-provider-order-8002</module>
+		<module>tulingvip04-ms-zuul-fileupload</module>
+
+		<module>tulingvip05-ms-cfg-auto-refresh-9100</module>
+		<module>tulingvip05-ms-cfg-server-9100</module>
+		<module>tulingvip05-ms-cfg-server-autorefresh-9100</module>
+		<module>tulingvip05-ms-cfg-server-bus-9100</module>
+		<module>tulingvip05-ms-cfg-server-dec-enc-9100</module>
+		<module>tulingvip05-ms-config-client</module>
+		<module>tulingvip05-ms-provider-order-8002</module>
+		<module>tulingvip05-ms-provider-order-8002-autorefresh</module>
+		<module>tulingvip05-ms-provider-order-8002-bus</module>
+		<module>tulingvip05-ms-provider-order-8003-autorefresh</module>
+		<module>tulingvip05-ms-provider-order-8003-bus</module>
+		<module>tulingvip05-ms-provider-order-dec-8002</module>
+
+		<module>tulingvip06-ms-consumer-user-8001-quickstarter</module>
+		<module>tulingvip06-ms-consumer-user-8001-trace</module>
+		<module>tulingvip06-ms-consumer-user-8001-trace-mq</module>
+		<module>tulingvip06-ms-eureka-server-9000</module>
+		<module>tulingvip06-ms-provider-order-8002-trace</module>
+		<module>tulingvip06-ms-provider-order-8002-trace-mq</module>
+		<module>tulingvip06-ms-provider-order-8002-trace-quickstart</module>
+		<module>tulingvip06-ms-provider-prod-8003-trace</module>
+		<module>tulingvip-ms-common</module>
+		<module>tulingvip-ms-turbine</module>
+	</modules>
+
+
+	<!--引入springcloud的版本-->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Finchley.SR2</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

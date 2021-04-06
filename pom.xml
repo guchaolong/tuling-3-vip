@@ -64,6 +64,34 @@
         <module>tuling-vip-spring</module>
 
 
+
+        <module>designpattern</module>
+
+        <module>single-mall</module>
+
+        <module>spring-cloud-mall-master/spring-cloud-mall</module>
+
+        <module>tuling-3-rocketmq-master/tuling-3-rocketmq</module>
+
+        <module>tuling-mall-master/tuling-mall</module>
+
+        <module>tuling-mvc-3-master/tuling-mvc-3</module>
+
+        <module>tuling-mybatis-3-master/tuling-mybatis-3</module>
+
+        <module>tuling-tomcat-simple/tuling-tomcat</module>
+
+        <module>tuling-vip-cloud-master/tuling-vip-cloud</module>
+
+        <module>tuling-vip-springboot-master/tuling-vip-springboot</module>
+
+        <module>tuling-zookeeper-3-master/tuling-zookeeper-3</module>
+
+        <module>tulingspc-vip-springboot-master/tulingspc-vip-springboot</module>
+
+
+
+
         <module></module>
 
     </modules>
