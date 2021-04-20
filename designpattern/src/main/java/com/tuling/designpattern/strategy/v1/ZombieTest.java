@@ -22,6 +22,7 @@ public class ZombieTest {
 
 
 }
+
 abstract class AbstractZombie{
     public abstract void display();
 

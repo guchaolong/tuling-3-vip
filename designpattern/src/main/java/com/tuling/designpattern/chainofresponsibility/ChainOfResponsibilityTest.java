@@ -22,6 +22,7 @@ public class ChainOfResponsibilityTest {
 
     }
 }
+
 class Request{
     private boolean loggedOn;
     private boolean frequentOk;
@@ -103,6 +104,7 @@ abstract class Handler{
     abstract boolean process(Request request);
 
 }
+
 class RequestFrequentHandler extends Handler{
 
     public RequestFrequentHandler(Handler next) {

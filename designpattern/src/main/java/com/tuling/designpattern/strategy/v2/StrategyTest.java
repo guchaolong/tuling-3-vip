@@ -16,12 +16,15 @@ public class StrategyTest {
         zombie.attack();
     }
 }
+
 interface Moveable{
     void move();
 }
+
 interface Attackable{
     void attack();
 }
+
 abstract class Zombie{
     abstract public void display();
     Moveable moveable;

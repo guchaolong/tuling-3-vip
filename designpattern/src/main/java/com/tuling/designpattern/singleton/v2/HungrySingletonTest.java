@@ -11,6 +11,7 @@ public class HungrySingletonTest {
         System.out.println(instance==instance1);
     }
 }
+
 class HungrySingleton{
 
     private static HungrySingleton instance = new HungrySingleton();

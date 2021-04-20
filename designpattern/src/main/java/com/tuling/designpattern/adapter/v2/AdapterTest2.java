@@ -17,9 +17,11 @@ class Adaptee{
         return 220;
     }
 }
+
 interface Target {
     int output5v();
 }
+
 // Class Adapter
 class Adpater extends Adaptee implements Target{
 

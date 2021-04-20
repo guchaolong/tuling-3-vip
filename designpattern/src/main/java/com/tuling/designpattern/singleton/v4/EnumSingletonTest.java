@@ -1,6 +1,8 @@
 package com.tuling.designpattern.singleton.v4;
 
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 
 /**
  * @author 腾讯课堂-图灵学院  郭嘉

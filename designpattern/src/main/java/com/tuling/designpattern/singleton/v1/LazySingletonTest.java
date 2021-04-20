@@ -27,6 +27,7 @@ public class LazySingletonTest {
 
     }
 }
+
 class LazySingleton{
 
     private volatile static LazySingleton instance;

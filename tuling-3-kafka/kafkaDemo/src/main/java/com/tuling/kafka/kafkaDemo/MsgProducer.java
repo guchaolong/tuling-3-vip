@@ -41,7 +41,7 @@ public class MsgProducer {
         Producer<String, String> producer = new KafkaProducer<>(props);
 
         int msgNum = 5;
-        CountDownLatch countDownLatch = new CountDownLatch(msgNum);
+        final CountDownLatch countDownLatch = new CountDownLatch(msgNum);
         for (int i = 1; i <= msgNum; i++) {
             Order order = new Order(i, 100 + i, 1, 1000.00);
             //指定发送分区

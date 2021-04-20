@@ -13,14 +13,17 @@ public class AdapterTest1 {
 
     }
 }
+
 class Adaptee{
     public int output220v(){
         return 220;
     }
 }
+
 interface Target{
     int output5v();
 }
+
 // Object Adapter
 class Adapter implements Target{
 
