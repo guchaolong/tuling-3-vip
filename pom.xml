@@ -13,6 +13,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>tuling</name>
     <description>Demo project for Spring Boot</description>
+    <packaging>pom</packaging>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -88,11 +90,6 @@
         <module>tuling-zookeeper-3-master/tuling-zookeeper-3</module>
 
         <module>tulingspc-vip-springboot-master/tulingspc-vip-springboot</module>
-
-
-
-
-        <module></module>
 
     </modules>
     <dependencies>
